@@ -751,6 +751,10 @@ int batadv_hardif_enable_interface(struct batadv_hard_iface *hard_iface,
 	batadv_info(hard_iface->soft_iface, "Adding interface: %s\n",
 		    hard_iface->net_dev->name);
 
+	if (batadv_is_wifi_hardif(hard_iface))
+		batadv_info(hard_iface->soft_iface, "Detected %s as a wifi device\n",
+				hard_iface->net_dev->name);
+
 	if (atomic_read(&bat_priv->fragmentation) &&
 	    hardif_mtu < required_mtu)
 		batadv_info(hard_iface->soft_iface,

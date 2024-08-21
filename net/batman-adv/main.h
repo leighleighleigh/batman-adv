@@ -86,8 +86,8 @@
 #define BATADV_LOG_BUF_LEN 8192	  /* has to be a power of 2 */
 
 /* number of packets to send for broadcasts on different interface types */
-#define BATADV_NUM_BCASTS_DEFAULT 2
-#define BATADV_NUM_BCASTS_WIRELESS 5
+#define BATADV_NUM_BCASTS_DEFAULT 1
+#define BATADV_NUM_BCASTS_WIRELESS 3
 
 /* length of the single packet used by the TP meter */
 #define BATADV_TP_PACKET_LEN ETH_DATA_LEN
