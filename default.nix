@@ -17,6 +17,7 @@ stdenv.mkDerivation rec {
   src = lib.cleanSource ./.;
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
+
   makeFlags = kernel.makeFlags ++ [
     "KERNELPATH=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
   ];
@@ -27,6 +28,9 @@ stdenv.mkDerivation rec {
     sed -i -e "s,INSTALL_MOD_DIR=,INSTALL_MOD_PATH=$out INSTALL_MOD_DIR=," \
       -e /depmod/d Makefile
   '';
+
+  #postInstall = ''
+  #'';
 
   meta = {
     homepage = "https://www.open-mesh.org/projects/batman-adv/wiki/Wiki";
