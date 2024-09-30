@@ -18,3 +18,4 @@
 /.tmp_versions
 result
 build/**
+**/cppcheck**
