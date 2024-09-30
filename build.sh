@@ -10,6 +10,6 @@ EOF
 )
 
 #nix-build --expr 'let pkgs = import <nixpkgs> {}; in { batman_adv = pkgs.callPackage ./default.nix {}; }'
-nix-build --expr "$SCRIPT"
+nix-build --expr "$SCRIPT" "$@"
 ./unpack.sh
 
